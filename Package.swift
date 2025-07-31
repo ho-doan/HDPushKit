@@ -9,10 +9,14 @@ let package = Package(
         .iOS("15.0"),
         .macOS("11.0")
     ],
+    products: [
+        .library(name: "HDPushKit", targets: ["HDPushKit"]),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .executableTarget(
-            name: "HDPushKit"),
+        // .executableTarget(
+        //     name: "HDPushKit"),
+        .target(name: "HDPushKit"),
     ]
 )
