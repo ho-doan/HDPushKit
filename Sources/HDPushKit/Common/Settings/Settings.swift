@@ -1,27 +1,27 @@
 import Foundation
 
 public struct Settings: Codable, Equatable {
-    struct PushManagerSettings: Codable, Equatable {
-        var ssid = ""
-        var mobileCountryCode = ""
-        var mobileNetworkCode = ""
-        var trackingAreaCode = ""
-        var host = ""
-        var matchEthernet = false
+    public struct PushManagerSettings: Codable, Equatable {
+        public var ssid = ""
+        public var mobileCountryCode = ""
+        public var mobileNetworkCode = ""
+        public var trackingAreaCode = ""
+        public var host = ""
+        public var matchEthernet = false
     }
     
-    var uuid: UUID
-    var deviceName: String
-    var pushManagerSettings = PushManagerSettings()
+    public var uuid: UUID
+    public var deviceName: String
+    public var pushManagerSettings = PushManagerSettings()
 }
 
-extension Settings {
+public extension Settings {
     var user: User {
         User(uuid: uuid, deviceName: deviceName)
     }
 }
 
-extension Settings.PushManagerSettings {
+public extension Settings.PushManagerSettings {
     // Convenience function that determines if the pushManagerSettings model has any valid configuration properties set. A valid configuration
     // includes both a host value and an SSID or private LTE network configuration.
     var isEmpty: Bool {
