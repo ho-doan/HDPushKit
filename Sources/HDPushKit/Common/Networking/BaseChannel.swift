@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import Network
 
-public class BaseChannel {
+open class BaseChannel {
     private enum ConnectAction {
         case connect(String)
         case disconnect
