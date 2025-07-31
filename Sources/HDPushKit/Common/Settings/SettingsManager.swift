@@ -6,18 +6,18 @@ import Combine
 import os
 
 @available(iOS 15.0, *)
-class SettingsManager: NSObject {
+public class SettingsManager: NSObject {
     enum Error: Swift.Error {
         case uuidMismatch
     }
     
-    static let shared = SettingsManager()
+    public static let shared = SettingsManager()
     
     var settings: Settings {
         settingsSubject.value
     }
     
-    private(set) lazy var settingsPublisher = settingsSubject.eraseToAnyPublisher()
+    public private(set) lazy var settingsPublisher = settingsSubject.eraseToAnyPublisher()
     private let settingsWillWriteSubject = PassthroughSubject<Void, Never>()
     private static let settingsKey = "settings"
     private static let userDefaults = UserDefaults(suiteName: "group.com.hodoan.apple-samplecode.SimplePush")!
@@ -107,7 +107,7 @@ let deviceName = "Unknown"
     
     // MARK: - KVO
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         do {
             try refresh()
         } catch {

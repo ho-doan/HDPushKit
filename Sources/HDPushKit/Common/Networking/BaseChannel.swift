@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import Network
 
-class BaseChannel {
+public class BaseChannel {
     private enum ConnectAction {
         case connect(String)
         case disconnect
@@ -24,7 +24,7 @@ class BaseChannel {
     private var cancellables = Set<AnyCancellable>()
     private let logger: Logger
     
-    init(port: UInt16, heartbeatTimeout: DispatchTimeInterval, logger: Logger) {
+    public init(port: UInt16, heartbeatTimeout: DispatchTimeInterval, logger: Logger) {
         self.logger = logger
         networkSession.logger = logger
         heartbeatMonitor = HeartbeatMonitor(interval: heartbeatTimeout, logger: Logger(prependString: "Heartbeat Monitor", subsystem: .heartbeat))
