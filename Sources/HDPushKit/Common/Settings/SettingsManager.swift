@@ -13,7 +13,7 @@ public class SettingsManager: NSObject {
     
     public static let shared = SettingsManager()
     
-    var settings: Settings {
+    public var settings: Settings {
         settingsSubject.value
     }
     
