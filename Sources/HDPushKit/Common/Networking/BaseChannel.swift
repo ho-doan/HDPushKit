@@ -12,8 +12,8 @@ open class BaseChannel {
         stateSubject.value
     }
     
-    private(set) lazy var messagePublisher: AnyPublisher<Codable, Never> = internalMessageSubject.dropNil()
-    private(set) lazy var statePublisher: AnyPublisher<NetworkSession.State, Never> = stateSubject.eraseToAnyPublisher()
+    public private(set) lazy var messagePublisher: AnyPublisher<Codable, Never> = internalMessageSubject.dropNil()
+    public private(set) lazy var statePublisher: AnyPublisher<NetworkSession.State, Never> = stateSubject.eraseToAnyPublisher()
     private let networkSession = RequestResponseSession()
     private let heartbeatMonitor: HeartbeatMonitor
     private let shouldConnectToServerSubject = CurrentValueSubject<Bool, Never>(false)

@@ -74,7 +74,7 @@ let deviceName = "Unknown"
         settingsSubject.send(settings)
     }
     
-    func set(settings: Settings) throws {
+    public func set(settings: Settings) throws {
         guard settings.uuid == self.settings.uuid else {
             throw Error.uuidMismatch
         }
