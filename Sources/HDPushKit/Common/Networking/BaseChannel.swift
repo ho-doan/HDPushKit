@@ -186,7 +186,7 @@ public class BaseChannel {
         shouldConnectToServerSubject.send(false)
     }
     
-    func setHost(_ host: String) {
+    public func setHost(_ host: String) {
         hostSubject.send(host)
     }
     
