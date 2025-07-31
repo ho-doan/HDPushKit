@@ -53,7 +53,7 @@ let deviceName = "Unknown"
     // MARK: - Publishers
     
     // A publisher that emits new settings following a call to `set(settings:)`.
-    private(set) lazy var settingsDidWritePublisher = {
+    public private(set) lazy var settingsDidWritePublisher = {
         settingsWillWriteSubject
         .compactMap { [weak self] _ in
             self?.settingsPublisher
