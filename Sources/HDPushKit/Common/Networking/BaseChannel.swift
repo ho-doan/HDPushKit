@@ -178,11 +178,11 @@ open class BaseChannel {
     
     // MARK: - Connection
     
-    func connect() {
+    public func connect() {
         shouldConnectToServerSubject.send(true)
     }
     
-    func disconnect() {
+    public func disconnect() {
         shouldConnectToServerSubject.send(false)
     }
     
@@ -192,7 +192,7 @@ open class BaseChannel {
     
     // MARK: - Registration
     
-    func register(_ user: User) {
+    public func register(_ user: User) {
         registrationSubject.send(user)
     }
     
