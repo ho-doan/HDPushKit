@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "HDPushKit",
     platforms: [
-        .iOS("15.0"),
-        .macOS("11.0")
+        .iOS(.v15),
+        .macOS(.v11)
     ],
     products: [
         .library(name: "HDPushKit", targets: ["HDPushKit"]),

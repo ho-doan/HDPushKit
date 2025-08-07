@@ -1,14 +1,13 @@
 import Foundation
 import Combine
 import Network
-
 open class BaseChannel {
     private enum ConnectAction {
         case connect(String)
         case disconnect
     }
     
-    var state: NetworkSession.State {
+    public var state: NetworkSession.State {
         stateSubject.value
     }
     
