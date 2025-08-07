@@ -20,8 +20,7 @@ public class SettingsManager: NSObject {
     public private(set) lazy var settingsPublisher = settingsSubject.eraseToAnyPublisher()
     private let settingsWillWriteSubject = PassthroughSubject<Void, Never>()
     private static let settingsKey = "settings"
-    private let pushGroupIdentifier = (Bundle.main.object(forInfoDictionaryKey: "GroupNEAppPushLocal") as? String)!
-    private static lazy var userDefaults = UserDefaults(suiteName: pushGroupIdentifier)!
+    private static var userDefaults = UserDefaults(suiteName: (Bundle.main.object(forInfoDictionaryKey: "GroupNEAppPushLocal") as? String)!)!
     private let settingsSubject: CurrentValueSubject<Settings, Never>
     private static let logger = Logger(prependString: "SettingsManager", subsystem: .general)
     
