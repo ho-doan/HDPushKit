@@ -89,8 +89,8 @@ open class BaseChannel {
     private func setupNewConnection(to host: String, port: UInt16) -> NWConnection {
         // let tls = ConnectionOptions.TLS.Client(publicKeyHash: "XTQSZGrHFDV6KdlHsGVhixmbI/Cm2EMsz2FqE2iZoqU=").options
         // let parameters = NWParameters(tls: tls, tcp: ConnectionOptions.TCP.options)
-        let protocolFramer = NWProtocolFramer.Options(definition: LengthPrefixedFramer.definition)
-        parameters.defaultProtocolStack.applicationProtocols.insert(protocolFramer, at: 0)
+        // let protocolFramer = NWProtocolFramer.Options(definition: LengthPrefixedFramer.definition)
+        // parameters.defaultProtocolStack.applicationProtocols.insert(protocolFramer, at: 0)
         // let connection = NWConnection(host: NWEndpoint.Host(host), port: NWEndpoint.Port(rawValue: port)!, using: parameters)
         let connection = NWConnection(host: NWEndpoint.Host(host), port: NWEndpoint.Port(rawValue: port)!, using: .tcp)
         
